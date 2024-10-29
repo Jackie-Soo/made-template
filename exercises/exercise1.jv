@@ -26,7 +26,7 @@ pipeline AirportsPipeline {
     header: true;
     columns: [
 
-      "Lfd. Nummer" oftype text,
+      "Lfd. Nummer" oftype integer,
       "Name des Flughafens" oftype text,
       "Ort" oftype text,
       "Land" oftype text,
@@ -34,7 +34,7 @@ pipeline AirportsPipeline {
       "ICAO" oftype text,
       "Latitude" oftype decimal,
       "Longitude" oftype decimal,
-      "Altitude" oftype decimal
+      "Altitude" oftype integer
 
     ];
   }
