@@ -20,12 +20,19 @@ This project visualizes and analyzes the number of law enforcement officers, the
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
 
-### Datasource1: ExampleSource
+### Datasource1: ca_law_enforcement_by_city, 2019
 * Metadata URL: https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/downloads/download-printable-files
 * Data URL: https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/downloads/cius2019datatables-1.zip
 * Data Type: XLS
 
-This dataset is published by the Federal Bureau of Investigation's (FBI) Uniform Crime Reporting (UCR) program. The two datasets used in this project are the Law Enforcement Officers in California Cities dataset and the Crime in California Cities dataset. Categories of crimes reported include violent crime, murder and nonnegligent manslaughter, rape, robbery, aggravated assault, property crime, burglary, larceny-theft, motor vehicle damage, and arson. 
+This dataset is published by the Federal Bureau of Investigation's (FBI) Uniform Crime Reporting (UCR) program. This dataset shows the data of Law Enforcement Officers in California Cities.
+
+### Datasource1: ca_offenses_by_city, 2019
+* Metadata URL: https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/downloads/download-printable-files
+* Data URL: https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/downloads/cius2019datatables-1.zip
+* Data Type: XLS
+
+This dataset is published by the Federal Bureau of Investigation's (FBI) Uniform Crime Reporting (UCR) program. This dataset shows the reported Crime in California Cities. Categories of crimes reported include violent crime, murder and nonnegligent manslaughter, rape, robbery, aggravated assault, property crime, burglary, larceny-theft, motor vehicle damage, and arson. 
 
 ## Work Packages
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
