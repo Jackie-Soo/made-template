@@ -1,34 +1,40 @@
 # Project Plan
 
-## Title
+## visual analysis of the Number of Law Enforcement Officers and the Number of Crimes in California, the U.S. 
 <!-- Give your project a short title. -->
-TEMP, NOT DONE
+The project uses data from the FBI's Uniform Crime Reporting program to visualize and analyze the number of law enforcement officers and the number of crimes in various cities in California.
+
 
 ## Main Question
-
 <!-- Think about one main question you want to answer based on the data. -->
 
+1. Do all California cities have the same ratio of the number of law enforcement officers to the number of crimes in that city? Or is the number of law enforcement officers greater in some cities?
+2. What are the most common types of crimes in California? Are there certain crimes that are more common in a city compared to the rest of the state? If there are, what's the most common crime in each city?
 
 ## Description
-
 <!-- Describe your data science project in max. 200 words. Consider writing about why and how you attempt it. -->
-XY is an important problem, because... This projects analyzes XY, using method A. The results can give insights into...
+
+This project visualizes and analyzes the number of law enforcement officers, the number of crimes, the types of crimes, and the rates of crimes in various cities in California using data provided by the FBI. The safety of a city has an important impact on the quality of life of its inhabitants, economic development and social stability. The number of law enforcement officers and the crime rate of a city are important factors in considering the security of a city. Exploring the above issues through tableau, python, or jayvee on data released by the FBI will not only reveal differences in public safety resource allocation and crime types across cities, but also provide recommendations for policy development, law enforcement efficiency improvement, public safety awareness, and the feasibility of people moving to California cities.
 
 ## Datasources
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
 
 ### Datasource1: ExampleSource
-* Data URL: 
-* Data Type: CSV
+* Metadata URL: https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/downloads/download-printable-files
+* Data URL: https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/downloads/cius2019datatables-1.zip
+* Data Type: XLS
 
-Short description of the DataSource.
+This dataset is published by the Federal Bureau of Investigation's (FBI) Uniform Crime Reporting (UCR) program. The two datasets used in this project are the Law Enforcement Officers in California Cities dataset and the Crime in California Cities dataset. Categories of crimes reported include violent crime, murder and nonnegligent manslaughter, rape, robbery, aggravated assault, property crime, burglary, larceny-theft, motor vehicle damage, and arson. 
 
 ## Work Packages
-
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
-1. Example Issue [#1][i1]
-2. ...
+1. Data Conversion & Cleaning [#1][i1]
+2. Solutions & Data Analysis [#2][i2]
+3. Data Visualization [#3][i3]
+4. Final Report & Presentation [#4][i3]
 
-[i1]: https://github.com/jvalue/made-template/issues/1
+[i1]: https://github.com/jvalue/made-template/issues/123
+[i2]: https://github.com/jvalue/made-template/issues/128
+[i3]: https://github.com/jvalue/made-template/issues/129
