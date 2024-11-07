@@ -1,6 +1,6 @@
 # Project Plan
 
-## visual analysis of the Number of Law Enforcement Officers and the Number of Crimes in California, the U.S. 
+## Visual Analysis of the Number of Law Enforcement Officers and the Number of Crimes in California, the U.S. 
 <!-- Give your project a short title. -->
 The project uses data from the FBI's Uniform Crime Reporting program to visualize and analyze the number of law enforcement officers and the number of crimes in various cities in California.
 
