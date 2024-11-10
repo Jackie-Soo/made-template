@@ -27,7 +27,7 @@ This project visualizes and analyzes the number of law enforcement officers, the
 
 This dataset is published by the Federal Bureau of Investigation's (FBI) Uniform Crime Reporting (UCR) program. This dataset shows the data of Law Enforcement Officers in California Cities.
 
-### Datasource1: ca_offenses_by_city, 2019
+### Datasource2: ca_offenses_by_city, 2019
 * Metadata URL: https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/downloads/download-printable-files
 * Data URL: https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/downloads/cius2019datatables-1.zip
 * Data Type: XLS
