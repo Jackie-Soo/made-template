@@ -20,19 +20,19 @@ This project visualizes and analyzes the number of law enforcement officers, the
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
 
-### Datasource1: ca_law_enforcement_by_city, 2019
-* Metadata URL: https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/downloads/download-printable-files
-* Data URL: https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/downloads/cius2019datatables-1.zip
+### Datasource1: ca_law_enforcement_by_city, 2015
+* Metadata URL: https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/resource-pages/downloads/download-printable-files
+* Data URL: https://www.kaggle.com/datasets/fbi-us/california-crime?select=ca_law_enforcement_by_city.csv
 * License: us-pd
-* Data Type: XLS
+* Data Type: CSV
 
 This dataset is published by the Federal Bureau of Investigation's (FBI) Uniform Crime Reporting (UCR) program. This dataset shows the data of Law Enforcement Officers in California Cities.
 
-### Datasource2: ca_offenses_by_city, 2019
-* Metadata URL: https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/downloads/download-printable-files
-* Data URL: https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/downloads/cius2019datatables-1.zip
+### Datasource2: ca_offenses_by_city, 2015
+* Metadata URL: https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/resource-pages/downloads/download-printable-files
+* Data URL: https://www.kaggle.com/datasets/fbi-us/california-crime?select=ca_offenses_by_city.csv
 * License: us-pd
-* Data Type: XLS
+* Data Type: CSV
 
 This dataset is published by the Federal Bureau of Investigation's (FBI) Uniform Crime Reporting (UCR) program. This dataset shows the reported Crime in California Cities. Categories of crimes reported include violent crime, murder and nonnegligent manslaughter, rape, robbery, aggravated assault, property crime, burglary, larceny-theft, motor vehicle damage, and arson. 
 
