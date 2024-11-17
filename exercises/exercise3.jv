@@ -50,8 +50,8 @@ pipeline CsPipeline1 {
         write: ["Country Code"];
     }
     block CsHeaderWriter2 oftype CellWriter {
-        at: range R2:S2;
-        write: ["GDP per Capita", "Bond Issuance Share"];
+        at: cell S2;
+        write: ["Bond Issuance Share"];
     }
 
     block CsTableInterpreter oftype TableInterpreter {
@@ -104,8 +104,8 @@ pipeline CsPipeline2 {
         write: ["Country Code"];
     }
     block CsHeaderWriter2 oftype CellWriter {
-        at: range R2:S2;
-        write: ["GDP per Capita", "Bond Issuance Share"];
+        at: cell R2;
+        write: ["GDP per Capita"];
     }
 
     block CsTableInterpreter oftype TableInterpreter {
