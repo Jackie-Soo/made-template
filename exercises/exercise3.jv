@@ -64,7 +64,7 @@ pipeline CsPipeline1 {
   
     block CsLoader oftype SQLiteLoader {
         table: "bondIssuance";
-        file: "./contry-stats.sqlite";
+        file: "./country-stats.sqlite";
     }
     
 }
@@ -118,7 +118,7 @@ pipeline CsPipeline2 {
   
     block CsLoader oftype SQLiteLoader {
         table: "gdpPerCapita";
-        file: "./contry-stats.sqlite";
+        file: "./country-stats.sqlite";
     }
     
 }
