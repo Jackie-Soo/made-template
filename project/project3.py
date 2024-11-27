@@ -1,7 +1,7 @@
 """
 The author of the dataset fatal-police-shootings-in-the-us
 is KAROLINA WULLUM: https://www.kaggle.com/datasets/kwullum/fatal-police-shootings-in-the-us
-Its license is CC BY-NC-SA 4.0.
+Its license is CC BY-NC-SA 4.0. Website of the license: https://creativecommons.org/licenses/by-nc-sa/4.0/
 This project makes some changes to the original data.
 
 The license of the dataset california-crime is us-pd,
