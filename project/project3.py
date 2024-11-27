@@ -1,8 +1,21 @@
+"""
+The author of the dataset fatal-police-shootings-in-the-us
+is KAROLINA WULLUM: https://www.kaggle.com/datasets/kwullum/fatal-police-shootings-in-the-us
+Its license is CC BY-NC-SA 4.0.
+This project makes some changes to the original data.
+
+The license of the dataset california-crime is us-pd,
+which is not protected by copyright,
+and the public is free to copy, distribute, modify, or use the work as they wish.
+"""
+
 import os
 import pandas as pd
 import kagglehub
 import sqlite3
 import logging
+import requests
+from tenacity import retry, stop_after_attempt, wait_fixed
 
 # record program running information using log
 logging.basicConfig(filename='project3.log',
@@ -12,6 +25,7 @@ logging.basicConfig(filename='project3.log',
 
 
 # download dataset from kaggle
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(2))
 def download_dataset(dataset_name):
     try:
         path = kagglehub.dataset_download(dataset_name)
