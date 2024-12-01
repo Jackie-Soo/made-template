@@ -49,7 +49,7 @@ pipeline MobilPipeline1 {
     //"Geraet", "Hersteller", "Model", "Monat", "Temperatur in °C (DWD)"
     block MobilSequenceWriter oftype CellWriter {
         at: range A1:E1;
-        write: ["id", "producer", "model", "Month", "temperature"];
+        write: ["id", "producer", "model", "month", "temperature"];
     }
 
     block MobilHeaderWriter oftype CellWriter {
