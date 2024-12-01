@@ -4,11 +4,11 @@ import os
 import pandas as pd
 from project3 import main, download_dataset, read_csv, transform_crime_enforcement_data, transform_factors_data, load_to_db
 
-TEST_DATA_DIR = r'dataset'  # path of datasets
+TEST_DATA_DIR = r'~/.kaggle'  # path of the downloaded datasets
 DATABASE_PATH = os.path.join('data', 'project3.db')  # path of the output file
 
 
-class SystemTestDataPipeline(unittest.TestCase):
+class SystemTestDataPipeline(unittest.TestCase): # System-test level
 
     @patch('project3.kagglehub.dataset_download')
     @patch('project3.read_csv')
@@ -16,17 +16,17 @@ class SystemTestDataPipeline(unittest.TestCase):
     def test_full_data_pipeline(self, mock_connect, mock_read_csv, mock_download_dataset):
         # data downloading
         mock_download_dataset.side_effect = [
-            os.path.join(TEST_DATA_DIR, 'crime_enforcement_data'),  # download path1
-            os.path.join(TEST_DATA_DIR, 'factors_data')  # download path2
+            os.path.join(TEST_DATA_DIR, 'kagglehub\datasets\fbi-us\california-crime\versions\1'),  # download path1
+            os.path.join(TEST_DATA_DIR, 'kagglehub\datasets\kwullum\fatal-police-shootings-in-the-us\versions\1')  # download path2
         ]
 
         # read csv
         mock_read_csv.side_effect = [
-            pd.read_csv(os.path.join(TEST_DATA_DIR, 'crime_enforcement_data', 'ca_offenses_by_city.csv'), encoding='UTF-8'),
-            pd.read_csv(os.path.join(TEST_DATA_DIR, 'crime_enforcement_data', 'ca_law_enforcement_by_city.csv'), encoding='UTF-8'),
-            pd.read_csv(os.path.join(TEST_DATA_DIR, 'factors_data', 'MedianHouseholdIncome2015.csv'), encoding='ISO-8859-1'),
-            pd.read_csv(os.path.join(TEST_DATA_DIR, 'factors_data', 'PercentagePeopleBelowPovertyLevel.csv'), encoding='ISO-8859-1'),
-            pd.read_csv(os.path.join(TEST_DATA_DIR, 'factors_data', 'PercentOver25CompletedHighSchool.csv'), encoding='ISO-8859-1')
+            pd.read_csv(os.path.join(TEST_DATA_DIR, 'kagglehub\datasets\fbi-us\california-crime\versions\1', 'ca_offenses_by_city.csv'), encoding='UTF-8'),
+            pd.read_csv(os.path.join(TEST_DATA_DIR, 'kagglehub\datasets\fbi-us\california-crime\versions\1', 'ca_law_enforcement_by_city.csv'), encoding='UTF-8'),
+            pd.read_csv(os.path.join(TEST_DATA_DIR, 'kagglehub\datasets\kwullum\fatal-police-shootings-in-the-us\versions\1', 'MedianHouseholdIncome2015.csv'), encoding='ISO-8859-1'),
+            pd.read_csv(os.path.join(TEST_DATA_DIR, 'kagglehub\datasets\kwullum\fatal-police-shootings-in-the-us\versions\1', 'PercentagePeopleBelowPovertyLevel.csv'), encoding='ISO-8859-1'),
+            pd.read_csv(os.path.join(TEST_DATA_DIR, 'kagglehub\datasets\kwullum\fatal-police-shootings-in-the-us\versions\1', 'PercentOver25CompletedHighSchool.csv'), encoding='ISO-8859-1')
         ]
 
         print(mock_read_csv.call_args_list) # check the path of 5 datasets
@@ -35,19 +35,19 @@ class SystemTestDataPipeline(unittest.TestCase):
         mock_conn = Mock()
         mock_connect.return_value = mock_conn
 
-        # run main
+        # run main (project3.py)
         main()
 
         # validata if the datasets are downloaded
-        mock_download_dataset.assert_any_call("dataset/crime_enforcement_data")
-        mock_download_dataset.assert_any_call("dataset/factors_data")
+        mock_download_dataset.assert_any_call("~\.kaggle\kagglehub\datasets\fbi-us\california-crime\versions\1")
+        mock_download_dataset.assert_any_call("~\.kaggle\kagglehub\datasets\kwullum\fatal-police-shootings-in-the-us\versions\1")
 
         # validate if the datasets are read
-        mock_read_csv.assert_any_call(os.path.join(TEST_DATA_DIR, 'crime_enforcement_data', 'ca_offenses_by_city.csv'))
-        mock_read_csv.assert_any_call(os.path.join(TEST_DATA_DIR, 'crime_enforcement_data', 'ca_law_enforcement_by_city.csv'))
-        mock_read_csv.assert_any_call(os.path.join(TEST_DATA_DIR, 'factors_data', 'MedianHouseholdIncome2015.csv'))
-        mock_read_csv.assert_any_call(os.path.join(TEST_DATA_DIR, 'factors_data', 'PercentagePeopleBelowPovertyLevel.csv'))
-        mock_read_csv.assert_any_call(os.path.join(TEST_DATA_DIR, 'factors_data', 'PercentOver25CompletedHighSchool.csv'))
+        mock_read_csv.assert_any_call(os.path.join(TEST_DATA_DIR, 'kagglehub\datasets\fbi-us\california-crime\versions\1', 'ca_offenses_by_city.csv'))
+        mock_read_csv.assert_any_call(os.path.join(TEST_DATA_DIR, 'kagglehub\datasets\fbi-us\california-crime\versions\1', 'ca_law_enforcement_by_city.csv'))
+        mock_read_csv.assert_any_call(os.path.join(TEST_DATA_DIR, 'kagglehub\datasets\kwullum\fatal-police-shootings-in-the-us\versions\1', 'MedianHouseholdIncome2015.csv'))
+        mock_read_csv.assert_any_call(os.path.join(TEST_DATA_DIR, 'kagglehub\datasets\kwullum\fatal-police-shootings-in-the-us\versions\1', 'PercentagePeopleBelowPovertyLevel.csv'))
+        mock_read_csv.assert_any_call(os.path.join(TEST_DATA_DIR, 'kagglehub\datasets\kwullum\fatal-police-shootings-in-the-us\versions\1', 'PercentOver25CompletedHighSchool.csv'))
 
 
         c_data = mock_read_csv.side_effect[0]  # 'ca_offenses_by_city.csv'
