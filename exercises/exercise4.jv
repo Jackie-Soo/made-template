@@ -63,7 +63,7 @@ pipeline MobilPipeline1 {
             "id" oftype id_range, // Jayvee 0.6.4 has a CountryCodeAlpha3 value type
             "producer" oftype text,
             "model" oftype text,
-            "Month" oftype month_range,
+            "month" oftype month_range,
             "temperature" oftype decimal,
             "battery_temperature" oftype decimal
         ];
