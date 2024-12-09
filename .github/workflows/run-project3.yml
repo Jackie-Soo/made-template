@@ -32,4 +32,10 @@ jobs:
         KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
       run: |
         python project/project3.py
+    
+    - name: output
+      uses: actions/upload-artifact@v3
+      with:
+        name: output-files
+        path: ./data
 
