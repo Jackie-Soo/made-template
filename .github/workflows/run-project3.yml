@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - project/**  # only files under project directory will activate this action
+      - project/project3.py  # only files under project directory will activate this action
   workflow_dispatch: # Manual activation possible
 
 jobs:
@@ -36,6 +36,6 @@ jobs:
     - name: output
       uses: actions/upload-artifact@v3
       with:
-        name: output-files
+        name: database_and_logging
         path: ./data
 
