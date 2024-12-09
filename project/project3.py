@@ -18,7 +18,7 @@ import requests
 from tenacity import retry, stop_after_attempt, wait_fixed
 
 # record program running information using log
-logging.basicConfig(filename='project3.log',
+logging.basicConfig(filename='data/project3.log',
                     level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
