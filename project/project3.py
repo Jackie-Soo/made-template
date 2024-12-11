@@ -111,12 +111,14 @@ def load_to_db(conn, dataframe, table_name):
         logging.error(f"Failed to load data to table: {table_name}: {e}")
 
 
-def main():
+def main(conn=None):
     # download two different datasets from kaggle (Extract)
     crime_enforcement_path = download_dataset("fbi-us/california-crime")
+    print(crime_enforcement_path)
     if not crime_enforcement_path:
         return
     factors_path = download_dataset("kwullum/fatal-police-shootings-in-the-us")
+    print(factors_path)
     if not factors_path:
         return
 
@@ -127,7 +129,6 @@ def main():
     e_data = read_csv(enforcement_path, 'UTF-8')
     if c_data is None or e_data is None:
         return
-
     merged_data = transform_crime_enforcement_data(c_data, e_data)
 
     # Read and transform social factors data
@@ -139,13 +140,15 @@ def main():
     h_data = read_csv(education_path, 'ISO-8859-1')
     if i_data is None or p_data is None or h_data is None:
         return
-
     merged_data2 = transform_factors_data(i_data, p_data, h_data)
 
     # load data to the database with two different table names
-    conn = None
+    conn_by_main = False
+    if conn is None:  # make sure the test program can run
+        conn = sqlite3.connect('../data/project3.db')
+        conn_by_main = True
+
     try:
-        conn = sqlite3.connect('data/project3.db')
         load_to_db(conn, merged_data, 'crime_enforcement')
         load_to_db(conn, merged_data2, 'factors')
         conn.commit()
@@ -153,9 +156,12 @@ def main():
     except Exception as e:
         logging.error(f"Failed to connect to database or load changes: {e}")
     finally:
-        if conn:
+        if conn_by_main is True:
+            # make sure that the system test can run successfully
             conn.close()
             logging.info("connection to database is closed.\n")
+        else:
+            logging.info("connection to database is not closed yet due to system test.\n")
 
 
 if __name__ == "__main__":
