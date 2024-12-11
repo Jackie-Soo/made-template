@@ -145,7 +145,7 @@ def main(conn=None):
     # load data to the database with two different table names
     conn_by_main = False
     if conn is None:  # make sure the test program can run
-        conn = sqlite3.connect('../data/project3.db')
+        conn = sqlite3.connect('data/project3.db')
         conn_by_main = True
 
     try:
