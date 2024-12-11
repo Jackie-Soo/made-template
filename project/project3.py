@@ -161,7 +161,7 @@ def main(conn=None):
             conn.close()
             logging.info("connection to database is closed.\n")
         else:
-            logging.info("connection to database is not closed yet due to system test.\n")
+            logging.info("connection to database is not closed yet due to system test.")
 
 
 if __name__ == "__main__":
