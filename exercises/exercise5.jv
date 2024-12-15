@@ -17,7 +17,7 @@ valuetype Umlauts oftype text {
 }
 
 constraint GermanUmlauts oftype RegexConstraint {
-   regex: /^[A-Za-zÄäÖöÜü\s]*$/;
+   regex: /^[A-Za-zÄäÖöÜüß\s]*$/;
  }
 
 pipeline GTFSPipeline {
