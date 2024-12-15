@@ -17,7 +17,7 @@ valuetype Umlauts oftype text {
 }
 
 constraint GermanUmlauts oftype RegexConstraint {
-   regex: /.*[ÄäÖöÜüß].*/;
+   regex: /.*[ÄäÖöÜü].*/;
  }
 
 pipeline GTFSPipeline {
