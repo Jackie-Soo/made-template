@@ -35,3 +35,9 @@ Grading Exercise 1
 		Shape: 4 of 4
 		Types: 13 of 13
 ```
+  ## A visual analysis of the security situation and potential crime influencing factors in California‘s cities
+  See analysis-[report.pdf](https://github.com/Jackie-Soo/made-template/blob/Jackie-Soo-patch-1/project/analysis-report.pdf) for details.
+
+  ## License
+  This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
+  See the [LICENSE](https://github.com/Jackie-Soo/made-template/blob/Jackie-Soo-patch-1/LICENSE) file for details.
